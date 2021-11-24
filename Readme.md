@@ -19,25 +19,25 @@ The writeToS3 data is not supported for Docker based testing.
 The application uses the Hapi server to provide a REST Api. To run the application, after cloning the code from Github take the following steps.
    
 
-**Note**   
-The Node application requires Node version 14 or greater.   
+**Notes**   
+- The Node application requires Node version 14 or greater.   
+- In order for the Server to upload to an S3 bucket, please be sure to provide the Access Key and Secret Access key credentials that have access to GetBucket, CreateBucket, PutObject at the very least.    
    
+```
+export AWS_ACCESS_KEY_ID='{your key here}'
+export AWS_SECRET_ACCESS_KEY='{your key here}'
+```
 
 1. Navigate to the src folder.
-2. Creae a `.env` file with the following contents
+2. Create a `.env` file with the following contents
 
 ```
 REGION='us-east-2'
 BUCKET_NAME='pg-e-nathan-cc'
 FILE_NAME='filtered-Stations.csv'
-AWS_ACCESS_KEY_ID=''
-AWS_SECRET_ACCESS_KEY=''
 ```
 3. From a terminal run `npm start`
-   
 
-**Note**    
-In order for the Server to upload to an S3 bucket, please be sure to provide the Access Key and Secret Access key credentials that have access to GetBucket, CreateBucket, PutObject at the very least. 
    
 
 ### Running Via Docker
